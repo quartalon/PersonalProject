@@ -1,0 +1,48 @@
+﻿<div class="container-fluid" > 
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Owner</th>
+                <th>Street Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone</th>
+                <th>Price Range</th>
+                <th>Image</th>
+                <th>Map</th>
+                <th>Website</th>
+                <th>Dine In?</th>
+                <th>Take Away?</th>
+                <th>Delivery?</th>
+                <th>Reviews</th>
+                <th>Cuisine</th>
+                <th ng-show="account.getClaim('IsAdmin')">Edit? / Remove?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!--binds specific object fields within the array located within namespace c (ClientSideRouting)-->
+                <td><strong><em>{{controller.rest.name}}</em></strong></td>
+                <td>{{controller.rest.owner}}</td>
+                <td>{{controller.rest.streetAddress}}</td>
+                <td>{{controller.rest.city}}</td>
+                <td>{{controller.rest.state}}</td>
+                <td>{{controller.rest.phone}}</td>
+                <td>{{controller.rest.priceRange}}</td>
+                <td><img ng-src={{controller.rest.imageUrl}} alt="HTML5 Icon" style="width:220px;height:128px;" /></td>
+                <td><a href="{{controller.rest.mapUrl}}">Click Here</a></td>
+                <td><a href="{{controller.rest.websiteUrl}}">Click Here</a></td>
+                <td>{{controller.rest.dineIn}}</td>
+                <td>{{controller.rest.takeAway}}</td>
+                <td>{{controller.rest.delivery}}</td>
+                <td>{{controller.rest.reviews}}</td>
+                <td>{{controller.rest.category.cuisine}}</td>
+                <td ng-show="account.getClaim('IsAdmin')">
+                    <button class="btn btn-success" ui-sref="editRestaurant({id: controller.rest.id})">Edit</button>
+                    <button class="btn btn-danger" ng-click="controller.deleteRestaurant(rest.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

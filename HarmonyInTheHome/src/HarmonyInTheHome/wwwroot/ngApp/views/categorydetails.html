@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <table class="table table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>{{controller.cat.cuisine}} Cuisine</th>
+            </tr>
+            <tr>
+                <th>Restaurant</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rest in controller.cat.restaurants">
+                <td>{{rest.name}}</td>
+                <td>{{rest.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

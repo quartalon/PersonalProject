@@ -1,0 +1,59 @@
+﻿<div class="container">
+    <div display="block" text-align="center" class="col-lg-offset-2 form-area">
+        <form ng-submit="controller.addRestaurant()">
+            <div class="form-group">
+                <label>Image URL: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.imageUrl" />
+
+                <label>Name: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.name" />
+
+                <label>Owner: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.mfg" />
+
+                <label>Street Address: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.streetAdress" />
+
+                <label>City: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.city" />
+
+                <label>State: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.state" />
+
+                <label>Zip: </label>
+                <input type="number" class="form-control" ng-model="controller.rest1.zip" />
+
+                <label>Contact Phone, ie.(???) ???-???? : </label>
+                <input type="tel" pattern='[\(]\d{3}[\) ]\d{3}[\-]\d{4}' class="form-control" ng-model="controller.rest1.phone" />
+
+                <label>Dine In: </label>
+                <input type="checkbox" ng-model="controller.rest1.dineIn" />
+
+                <label>Take Away: </label>
+                <input type="checkbox" ng-model="controller.rest1.takeAway" />
+
+                <label>Delivery: </label>
+                <input type="checkbox" ng-model="controller.rest1.delivery" />
+                <br />
+                <label>Price Range: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.priceRange" />
+
+                <label>Map URL: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.mapUrl" />
+
+                <label>Website URL: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.websiteUrl" />
+
+                <label>Review: </label>
+                <input type="text" class="form-control" ng-model="controller.rest1.reviews" />
+
+                <label>Cuisine Type: </label>
+                <select ng-model="controller.rest1.category" ng-options="cat as cat.cuisine for cat in controller.cats">
+                    <option value="">Select a Cuisine</option>
+                </select>
+
+                <input type="submit" value="Add Restaurant" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>

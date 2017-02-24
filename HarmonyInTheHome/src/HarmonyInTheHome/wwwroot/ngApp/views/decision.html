@@ -1,0 +1,16 @@
+﻿<body>
+    <div class="panel panel-default text-center">
+        <div class="panel-heading">
+            <h3 class="panel-title">Let's Eat!</h3>
+            <h5>Here are the restaurants currently in the database from which the decision will be made. Register for the site and you can create your own list from the current database and even add more!</h5>
+        </div>
+        <div class="panel-body">
+            <p ng-repeat="rest in controller.rest" class="rest" id="{{rest.id}}">
+                {{rest.name}} / {{rest.city}} / {{rest.priceRange}} / {{rest.category.cuisine}}
+            </p>
+            <button class="btn-success" ui-sref="result">Let's Eat!</button>
+
+        </div>
+    </div>
+
+</body>

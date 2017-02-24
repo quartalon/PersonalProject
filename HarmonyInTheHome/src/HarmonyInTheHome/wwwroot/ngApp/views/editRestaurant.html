@@ -1,0 +1,54 @@
+﻿<div class="container-fluid">
+    <form ng-submit="controller.editProduct()" class="form-control">
+        <label>Image</label>
+        <input type="text" ng-model="controller.rest.imageUrl" />
+
+        <label>Name</label>
+        <input type="text" ng-model="controller.rest.name" />
+
+        <label>Owner</label>
+        <input type="text" ng-model="controller.rest.owner" />
+
+        <label>Street Address</label>
+        <input type="text" ng-model="controller.rest.streetAdress" />
+
+        <label>City</label>
+        <input type="text" ng-model="controller.rest.city" />
+
+        <label>State</label>
+        <input type="text" ng-model="controller.rest.state" />
+
+        <label>Zip</label>
+        <input type="number" ng-model="controller.rest.zip" />
+
+        <label>Contact Phone</label>
+        <input type="number" ng-model="controller.rest.phone" />
+
+        <label>Dine In</label>
+        <input type="checkbox" ng-model="controller.rest.dineIn" />
+
+        <label>Take Away</label>
+        <input type="checkbox" ng-model="controller.rest.takeAway" />
+
+        <label>Delivery</label>
+        <input type="checkbox" ng-model="controller.rest.delivery" />
+
+        <label>Price Range</label>
+        <input type="text" ng-model="controller.rest.priceRange" />
+
+        <label>Map</label>
+        <input type="text" ng-model="controller.rest.mapUrl" />
+
+        <label>Website</label>
+        <input type="text" ng-model="controller.rest.websiteUrl" />
+
+        <label>Reviews</label>
+        <input type="text" ng-model="controller.rest.reviews" />
+
+        <label>Cuisine Type</label>
+        <input type="text" ng-model="controller.rest.category.cuisine" />
+
+        <input type="submit" value="Edit Restaurant" class="btn btn-success" />
+
+    </form>
+</div>

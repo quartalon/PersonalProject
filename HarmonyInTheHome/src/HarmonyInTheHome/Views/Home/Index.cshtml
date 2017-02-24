@@ -1,0 +1,95 @@
+<html ng-app="HarmonyInTheHome">
+<head>
+    <title>Here's What's For Dinner!</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+    <link href="~/css/WFDStyle.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+
+<body ng-controller="AccountController as account">
+    <div>
+        <div class="text-right">
+            <a class="btn btn-success" href="/login" ng-show="!account.isLoggedIn()">Login/Register</a>
+            <a class="btn btn-success" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+            <div ng-show="account.isLoggedIn()">
+                [{{account.getUserName()}}]
+            </div>
+            </div>
+            <div class="btn-group" uib-dropdown keyboard-nav dropdown-append-to="appendToEl">
+                <button id="btn-append-to" type="button" class="btn btn-primary" uib-dropdown-toggle ng-show="account.isLoggedIn()">
+                    User Links <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to">
+                    <li role="menuitem"><a href="/decision">Decision Time!</a></li>
+                    <li role="menuitem"><a href="/">Home</a></li>
+                    <li role="menuitem"><a href="/restaurants">All Restaurants</a></li>
+                    <li role="menuitem"><a href="/addRestaurant">Add Restaurant</a></li>
+                    <li role="menuitem"><a href="/categories">All Cuisines</a></li>
+                    <li role="menuitem"><a href="addCategory">Add Cuisine</a></li>
+                    <li role="menuitem"><a href="/about">About/Contact</a></li>
+                </ul>
+            </div>
+        </div>
+       <div class="btn-group pull-right" uib-dropdown keyboard-nav dropdown-append-to="appendToEl">
+        <button id="btn-append-to" type="button" class="btn btn-primary" uib-dropdown-toggle ng-show="account.getClaim('IsAdmin')">
+            Admin Links <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to">
+            <li role="menuitem"><a href="/">Home</a></li>
+            <li role="menuitem"><a href="/decision">Decision Time!</a></li>
+            <li role="menuitem"><a href="/restaurants">All Restaurants</a></li>
+            <li role="menuitem"><a href="/categories">All Cuisines</a></li>
+            <li role="menuitem"><a href="/addRestaurant">Add Restaurant</a></li>
+            <li role="menuitem"><a href="addCategory">Add Cuisine</a></li>
+            <li role="menuitem"><a href="/secret">Secret</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="/categories">Categories</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        @*<div>
+            <a href="/">Home</a> /
+            <a href="/decision">Decision Time!</a> /
+            <a href="/restaurants">Restaurants</a> /
+            <a href="/categories">Categories</a> /
+            <a href="/addRestaurant">Add Restaurant</a> /
+            <a href="addCategory">Add Category</a> /
+            <a href="/about">About</a> /
+            <a href="/secret">Secret</a> /
+            <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
+            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+            <div ng-show="account.isLoggedIn()">
+                [{{account.getUserName()}}]
+            </div>
+        </div>*@
+        <hr />
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+    <!-- App Files-->
+    @*<script src="checklist-model.js"></script>*@
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+
+
+    <!-- Security -->
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
+
+</body>
+</html>

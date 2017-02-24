@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <table class="table table-bordered table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>What cuisine you looking for?</th>
+                <th ng-show="account.getClaim('IsAdmin')">Edit? / Remove?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cat in controller.cats">
+                <td><a ui-sref="categorydetails({id: cat.id})">{{cat.cuisine}}</a></td>
+                <td ng-show="account.getClaim('IsAdmin')">
+                    <button class="btn btn-success" ui-sref="editCategory({id: cat.id})">Edit</button>
+                    <button class="btn btn-danger" ng-click="controller.deleteCategory(cat.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
